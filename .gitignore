@@ -1,0 +1,17 @@
+# Xcode local state and build products
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcresult
+*.ipa
+*.dSYM/
+# Local secrets and databases
+.env
+.env.*
+*.p12
+*.mobileprovision
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
