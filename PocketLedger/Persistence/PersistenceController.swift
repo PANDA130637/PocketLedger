@@ -2,9 +2,10 @@ import CoreData
 
 final class PersistenceController {
     let container: NSPersistentContainer
+    private static let sharedModel = makeModel()
 
     init(inMemory: Bool = false) throws {
-        container = NSPersistentContainer(name: "PocketLedger", managedObjectModel: Self.makeModel())
+        container = NSPersistentContainer(name: "PocketLedger", managedObjectModel: Self.sharedModel)
         let description = NSPersistentStoreDescription()
         if inMemory {
             description.type = NSInMemoryStoreType
@@ -94,3 +95,4 @@ enum LedgerStore {
         catch { context.rollback(); throw error }
     }
 }
+
